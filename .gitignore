@@ -131,6 +131,6 @@ dmypy.json
 # VS Code
 *.code-workspace
 
-# Priavte Core
+# Private Core
 
 secrets/
