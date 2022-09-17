@@ -8,16 +8,6 @@ OUTPUT_ID = 958961458765516840
 BUGREPORT_URL = "https://github.com/mxze16/novabot-dev/issues/new/choose"
 
 command_help = {
-    "misc": {
-        "settings": {
-            "main": {
-                "prefix": "Allows you to modify the prefix for the guild.\n\nPassing `default` or `reset` as an argument will set the prefix to `>`, or the original prefix.\n\n`Example of command usage:`\n\n```>setup prefix <new_prefix>```"
-            }
-        },
-    },
-    "moderation": {
-
-    },
     "utilities": {
         "ping": "Returns the latency of the bot.\n\n`Example of command usage:`\n\n```>ping```",
         "members": "Returns a list of embeds full of members within the role provided.\n\nLet's assume the name of the desired role is 'testingrole' and the ID of the role is 1234567890. The following should work as intended.\n\nYou can supply a partial lookup, for example 'testi', and it should be able to return the role as normal most of the time, assuming the lookup is precise.\n\nYou can supply the role id, for example '1234567890', and it will convert the id into the role, assuming the id is correct.\n\nOr you can simply ping the role (not recommended for a number of reasons).\n\n`Example of command usage:`\n\n```>members testi\n>members 1234567890\n>members @testingrole```",

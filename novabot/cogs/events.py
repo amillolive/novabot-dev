@@ -35,7 +35,7 @@ class Events(commands.Cog, description = 'The events cog. Error handling, guild 
         
         if isinstance(error, commands.BadArgument):
             embed = discord.Embed(
-                title = 'Oh no!',
+                title = 'Oops!',
                 colour = self.bot.default_colour,
                 description = f"A bad argument was provided."
             )

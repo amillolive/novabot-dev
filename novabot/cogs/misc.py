@@ -13,8 +13,6 @@ class Misc(commands.Cog, description="All commands that don't fall into a specif
     COG_EMOJI = "🛡️"
     def __init__(self, bot):
         self.bot = bot
-    
-    cog_command_help = command_help["misc"]
 
 def setup(bot):
     bot.add_cog(Misc(bot))

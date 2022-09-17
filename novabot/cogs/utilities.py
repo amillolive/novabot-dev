@@ -18,7 +18,6 @@ class Utilities(commands.Cog, description='All utility commands. Utility command
     @commands.command(help = cog_command_help["ping"], description = 'Check the latency of the bot.')
     @commands.cooldown(1, 3.0, commands.BucketType.user)
     async def ping(self, ctx):
-
         embed = discord.Embed(
             title = 'Pong!',
             colour = self.bot.default_colour,
@@ -39,9 +38,10 @@ class Utilities(commands.Cog, description='All utility commands. Utility command
         embed.set_footer(text = self.bot.user.display_name, icon_url = self.bot.user.display_avatar.url)
         embed.set_author(name = ctx.author.display_name, icon_url = ctx.author.display_avatar.url)
 
-        await ctx.interaction.respond(embed = embed, ephemeral = True)
+        await ctx.respond(embed = embed, ephemeral = True)
 
     @commands.command(help = cog_command_help["members"], description = 'Get a list of members in a role.')
+    @commands.guild_only()
     @commands.cooldown(1, 3.0, commands.BucketType.member)
     async def members(self, ctx, *, role : NBRoleConverter):
         embeds = []

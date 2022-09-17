@@ -9,7 +9,6 @@ import os
 import sqlite3 as sql
 
 class Moderation(commands.Cog, description='All moderation commands. Bans, mutes, kicks, they are all handled here.'):
-    COG_EMOJI = "🛡️"
     def __init__(self, bot):
         self.bot = bot
 
