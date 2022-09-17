@@ -7,7 +7,6 @@ from datetime import datetime
 import asyncio
 import os
 import sqlite3 as sql
-import PycordUtils
 
 with open("./secrets/token") as f:
     token = f.read().strip()
@@ -41,7 +40,6 @@ bot = commands.Bot(
 )
 
 bot.default_colour = discord.Colour.from_rgb(r=0, g=0, b=255)
-bot.music = PycordUtils.Music()
 
 for filename in os.listdir('./novabot/cogs'):
     if filename.endswith('.py'):

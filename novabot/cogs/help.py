@@ -13,7 +13,14 @@ class NovaBotHelpCommand(commands.HelpCommand):
         super().__init__()
     
     def get_command_signature(self, command):
-        return f'`{self.context.clean_prefix}{command.name}` `{command.signature}`'
+        if not command.signature and not command.parent:
+            return f'`{self.context.clean_prefix}{command.name}`'
+        if command.signature and not command.parent:
+            return f'`{self.context.clean_prefix}{command.name}` `{command.signature}`'
+        if not command.signature and command.parent:
+            return f'`{command.name}`'
+        else:
+            return f'`{command.name}` `{command.signature}`'
     
     def get_command_aliases(self, command):
         if not command.aliases:
