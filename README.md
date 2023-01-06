@@ -5,3 +5,6 @@ Have any questions? Feel free to join the support server on Discord! (coming soo
 
 # Frequently asked questions
 Coming soon..
+
+# Credits
+

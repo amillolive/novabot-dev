@@ -35,14 +35,26 @@ class Events(commands.Cog, description = 'The events cog. Error handling, guild 
         
         if isinstance(error, commands.BadArgument):
             embed = discord.Embed(
-                title = 'Oops!',
-                colour = self.bot.default_colour,
+                title = 'Yikes!',
+                colour = self.bot.default_error,
                 description = f"A bad argument was provided."
             )
             embed.set_footer(text = self.bot.user.display_name, icon_url = self.bot.user.display_avatar.url)
             embed.set_author(name = ctx.author.display_name, icon_url = ctx.author.display_avatar.url)
 
             await ctx.send(embed = embed, view = BugReportView())
+        
+        if isinstance(error, commands.CommandOnCooldown):
+            embed = discord.Embed(
+                title = 'Yikes!',
+                colour = self.bot.default_error,
+                description = f"This command is on cooldown. Retry after: {round(error.retry_after)}s"
+            )
+            embed.set_footer(text = self.bot.user.display_name, icon_url = self.bot.user.display_avatar.url)
+            embed.set_author(name = ctx.author.display_name, icon_url = ctx.author.display_avatar.url)
+
+            await ctx.send(embed = embed, view = BugReportView())
+
 
         else:
             print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)

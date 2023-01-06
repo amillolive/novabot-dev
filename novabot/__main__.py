@@ -40,6 +40,7 @@ bot = commands.Bot(
 )
 
 bot.default_colour = discord.Colour.from_rgb(r=0, g=0, b=255)
+bot.default_error = discord.Colour.from_rgb(r=255, g=0, b=0)
 
 for filename in os.listdir('./novabot/cogs'):
     if filename.endswith('.py'):

@@ -15,7 +15,7 @@ class Utilities(commands.Cog, description='All utility commands. Utility command
     
     cog_command_help = command_help["utilities"]
     
-    @commands.command(help = cog_command_help["ping"], description = 'Check the latency of the bot.')
+    @commands.command(aliases = (['latency']), help = cog_command_help["ping"], description = 'Check the latency of the bot.')
     @commands.cooldown(1, 3.0, commands.BucketType.user)
     async def ping(self, ctx):
         embed = discord.Embed(
